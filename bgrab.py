@@ -4,13 +4,26 @@
 
 import socket
 
-sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM) #TCP
+def getbanner(ip,port):
+	sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM) #TCP
+	socket.setdefaulttimeout(4)
 
-t_host = str(raw_input("Enter the host name: "))
-t_port = int(raw_input("Enter Port: "))
+	ip = str(raw_input("Enter the host name: "))
+	port = int(raw_input("Enter Port: "))
 
-sock.connect((t_host,t_port))
-sock.send('GET HTTP/1.1 \r\n')
+	sock.connect((ip,port))
+	sock.send('GET HTTP/1.1 \r\n')
 
-ret = sock.recv(1024)
-print '[+]' + str(ret)
+	ret = sock.recv(1024)
+	print '[+]' + str(ret)
+	return ret
+
+def main():
+	banner = getbanner(ip, port)
+	return banner
+
+if _name_ == '_main_':
+	main()
+
+
+

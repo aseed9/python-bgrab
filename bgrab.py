@@ -22,8 +22,6 @@ def main():
 	banner = getbanner(ip, port)
 	return banner
 
-if _name_ == '_main_':
-	main()
 
 
 

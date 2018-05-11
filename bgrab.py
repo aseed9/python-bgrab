@@ -3,12 +3,13 @@
 # banner.py
 
 import socket
-portList = range(1,1024)
+portList = range(t_port,tt_port)
 sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM) #TCP
 
 t_host = str(raw_input("Enter the host name: "))
-t_port = int(raw_input("Enter Port: "))
-sock.connect((t_host,t_port))
+t_port = int(raw_input("Specify port range start : "))
+tt_port = int(raw_input("Specify port range stop : "))
+sock.connect((t_host,portList))
 
 
 for port in portList:
